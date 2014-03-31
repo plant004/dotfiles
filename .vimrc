@@ -25,7 +25,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 "NeoBundle 'jpalardy/vim-slime'
 "NeoBundle 'scrooloose/syntatic'
 NeoBundle 'thinca/vim-quickrun'
-
+NeoBundle 'itchyny/lightline.vim'
 filetype plugin indent on
 
 
@@ -64,13 +64,22 @@ set number
 set wrap
 set textwidth=0
 
-if exists('&colorcolumn')
-  set colorcolumn=80
-endif
+"if exists('&colorcolumn')
+"  set colorcolumn=80
+"endif
 set t_vb=
 set novisualbell
 
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+
+set expandtab "タブ入力を複数の空白入力に置き換える
+set tabstop=4 "画面上でタブ文字が占める幅
+set shiftwidth=4 "自動インデントでずれる幅
+set softtabstop=4 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set autoindent "改行時に前の行のインデントを継続する
+set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+
+
 
 " macro and key settings
 inoremap jj <Esc>
@@ -145,12 +154,29 @@ endif
 
 
 
-
+set laststatus=2
 
 syntax on
 
-" colorscheme
-colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="low"
+let g:solarized_visibility="high"
+
+
+set t_Co=256
 
 set background=dark
+" colorscheme
+colorscheme solarized
+"colorscheme molokai
+"colorscheme hybrid
+
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+" モードラインを有効にする
+"set modeline
+" 3行目までをモードラインとして検索する
+"set modelines=3
+
 
